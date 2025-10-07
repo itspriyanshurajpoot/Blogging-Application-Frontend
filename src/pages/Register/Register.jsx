@@ -16,6 +16,7 @@ const Register = () => {
     file: null,
   });
   const [loading, setLoading] = useState(false);
+  const [showErrorPopup, setShowErrorPopup] = useState(false);
 
   const handleChange = (e) => {
     if (e.target.name === "file") {
@@ -64,8 +65,13 @@ const Register = () => {
 
         // Navigate to the home page
         navigate("/");
+      } else {
+        setShowErrorPopup(true);
+        setTimeout(() => setShowErrorPopup(false), 2000);
       }
     } catch (error) {
+      setShowErrorPopup(true);
+      setTimeout(() => setShowErrorPopup(false), 2000);
     } finally {
       setLoading(false); // Hide loading spinner
     }
@@ -73,6 +79,11 @@ const Register = () => {
 
   return (
     <div className="login-page">
+      {showErrorPopup && (
+        <div className="login-error-popup">
+          <span>❌ An error ocuured</span>
+        </div>
+      )}
       {loading && (
         <div className="loading-overlay">
           <div className="spinner"></div>

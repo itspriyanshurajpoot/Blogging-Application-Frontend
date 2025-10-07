@@ -10,6 +10,7 @@ const BlogPage = () => {
   const BASE_URL = import.meta.env.VITE_API_BASE_URL;
   const { blogId } = useParams();
   const [blog, setBlog] = useState({});
+  const [showErrorPopup, setShowErrorPopup] = useState(false);
 
   const [comment, setComment] = useState({
     blogId: blogId,
@@ -25,7 +26,6 @@ const BlogPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
       // post comment api call
       const { data } = await axios.post(
@@ -46,8 +46,13 @@ const BlogPage = () => {
           content: "",
         });
       }
+      else{
+        setShowErrorPopup(true);
+        setTimeout(() => setShowErrorPopup(false), 2000);
+      }
     } catch (error) {
-      console.log(error);
+      setShowErrorPopup(true);
+      setTimeout(() => setShowErrorPopup(false), 2000);
     }
   };
 
@@ -82,6 +87,11 @@ const BlogPage = () => {
 
   return (
     <div className="blog-page-main-container">
+      {showErrorPopup && (
+        <div className="login-error-popup">
+          <span>❌ Please login</span>
+        </div>
+      )}
       <div className="blog-page-navbar">
         <Navbar />
       </div>

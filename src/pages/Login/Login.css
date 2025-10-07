@@ -126,4 +126,41 @@
   }
 }
 
+.login-error-popup {
+  position: fixed;
+  top: 40px;
+  right: 40px;
+  background: #e44;
+  color: #fff;
+  padding: 16px 32px;
+  border-radius: 8px;
+  box-shadow: 0 4px 24px rgba(228, 68, 68, 0.15);
+  font-size: 1.1rem;
+  font-weight: 600;
+  z-index: 9999;
+  animation: fadeInOut 2s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  90% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
 /* ...existing code... */

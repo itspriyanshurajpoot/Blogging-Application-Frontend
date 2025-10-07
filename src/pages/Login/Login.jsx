@@ -14,6 +14,7 @@ const Login = () => {
     password: "",
   });
   const [loading, setLoading] = useState(false);
+  const [showErrorPopup, setShowErrorPopup] = useState(false);
 
   const handleChange = (e) => {
     setRequestData({
@@ -40,9 +41,13 @@ const Login = () => {
         setIsLoggedIn(true);
         localStorage.setItem("token", JSON.stringify(data.data.token));
         navigate("/");
+      } else {
+        setShowErrorPopup(true);
+        setTimeout(() => setShowErrorPopup(false), 2000);
       }
     } catch (error) {
-      console.log(error);
+      setShowErrorPopup(true);
+      setTimeout(() => setShowErrorPopup(false), 2000);
     } finally {
       setLoading(false);
     }
@@ -50,6 +55,11 @@ const Login = () => {
 
   return (
     <div className="login-page">
+      {showErrorPopup && (
+        <div className="login-error-popup">
+          <span>❌ Invalid email or password!</span>
+        </div>
+      )}
       {loading && (
         <div className="loading-overlay">
           <div className="spinner"></div>
