@@ -183,7 +183,7 @@ label {
 
 @media (max-width: 625px) {
   .blog-upload-container {
-    width: 100%;
+    width: 160%;
     padding: 10px 15px;
   }
 
@@ -192,7 +192,7 @@ label {
   }
 
   .upload-blog-form-category-select {
-    width: 100%;
+    width: 30%;
   }
 
   .quill {
@@ -201,9 +201,15 @@ label {
 }
 
 @media (min-width: 626px) and (max-width: 1279px) {
-  .blog-upload-container {
-    width: 100%;
-    padding: 15px 20px;
+  .blog-upload-card {
+    max-width: 98vw;
+    padding: 12px 4vw;
+    gap: 12px;
+  }
+
+  .form-label img {
+    max-width: 90vw;
+    border-radius: 8px;
   }
 
   .upload-blog-form-each-part input {
@@ -211,7 +217,7 @@ label {
   }
 
   .upload-blog-form-category-select {
-    width: 100%;
+    width: 50%;
   }
 
   .quill {
