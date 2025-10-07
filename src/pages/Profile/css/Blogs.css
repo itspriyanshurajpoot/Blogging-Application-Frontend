@@ -1,0 +1,10 @@
+.blogs-page-container{
+    width: 100%;
+    padding: 20px;
+}
+
+@media (max-width: 625px) {
+    .blogs-page-container{
+        padding: 10px;
+    }
+}

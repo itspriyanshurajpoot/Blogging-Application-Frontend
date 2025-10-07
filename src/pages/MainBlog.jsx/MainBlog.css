@@ -1,0 +1,208 @@
+.main-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* padding: 0 20px; */
+  margin-top: 30px;
+  width: 100%;
+}
+
+li {
+  list-style-type: none;
+}
+
+.category {
+  max-width: 50vw;
+  overflow-x: scroll;
+  display: flex;
+  color: rgb(111, 110, 110);
+  gap: 10px;
+  background-color: transparent;
+  padding: 5px 10px;
+  /* border: 1px solid gray; */
+  border-radius: 20px;
+}
+
+.li-list {
+  font-weight: 400;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 5px 2px;
+  padding: 4px 20px;
+  border-radius: 20px;
+}
+
+.scroll-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  /* grid-template-rows: repeat(2, 1fr); 2 equal rows */
+  row-gap: 20px;
+  justify-items: center; 
+  width: 100%;
+  padding: 6vh 10vw;
+}
+
+.blog-card {
+  width: 22vw;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* smooth animation */
+  border-radius: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* subtle shadow */
+}
+
+.blog-card:hover {
+  transform: scale(1.05); /* slightly enlarge card */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* add shadow */
+  cursor: pointer; /* cursor changes on hover */
+}
+
+.blog-card img {
+  border-radius: 20px 20px 0 0;
+}
+
+.blog-card-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.blog-card-details p {
+  margin: 8px 0;
+}
+
+#category {
+  width: fit-content;
+  color: #5044e6;
+  font-size: 14px;
+  padding: 5px 15px;
+  /* text-decoration: underline; */
+  background-color: #dbd4ff;
+  margin-left: 10px;
+  font-weight: 500;
+  /* border: 1px solid gray;   */
+  border-radius: 20px;
+}
+
+#user-icon {
+  width: 20px;
+  /* margin: 0 2px; */
+  text-align: center;
+}
+
+#username {
+  display: flex;
+  padding: 2px 15px;
+  gap: 10px;
+  color: gray;
+  text-decoration: underline;
+  font-size: 14px;
+}
+
+#title {
+  font-size: 16px;
+  color: rgb(93, 89, 89);
+  padding: 0px 15px;
+}
+
+.slider-btns {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 20px;
+}
+
+.slider-btn {
+  background-color: #5044e6;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+@media (max-width: 630px) {
+ 
+  .scroll-container {
+    grid-template-columns: repeat(1, 1fr); /* 1 column for small screens */
+    grid-template-rows: auto; /* rows adjust based on content */
+    row-gap: 20px;
+    padding: 20px 5vw;
+  }
+
+  .blog-card {
+    width: 70vw;
+    height: auto; /* height adjusts based on content */
+  }
+
+  .category {
+    max-width: 90vw;
+    overflow-x: scroll;
+    display: flex;
+    color: rgb(111, 110, 110);
+    gap: 10px;
+    background-color: transparent;
+    padding: 5px 10px;
+    /* border: 1px solid gray; */
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+
+}
+
+@media (max-width: 400px) {
+  .blog-card {
+    width: 90vw;
+    height: auto; /* height adjusts based on content */
+  }
+
+  .category {
+    max-width: 90vw;
+    overflow-x: scroll;
+    display: flex;
+    color: rgb(111, 110, 110);
+    gap: 10px;
+    background-color: transparent;
+    padding: 5px 10px;
+    /* border: 1px solid gray; */
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+@media (min-width: 626px) and (max-width: 1024px) {
+  .scroll-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
+    grid-template-rows: auto; /* rows adjust based on content */
+    row-gap: 20px;
+    column-gap: 20px;
+    padding: 20px 5vw;
+  }
+
+  .blog-card {
+    width: 45vw;
+    height: auto; /* height adjusts based on content */
+  }
+
+  .category {
+    max-width: 90vw;
+    overflow-x: scroll;
+    display: flex;
+    color: rgb(111, 110, 110);
+    gap: 10px;
+    background-color: transparent;
+    padding: 5px 10px;
+    /* border: 1px solid gray; */
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+  
+}

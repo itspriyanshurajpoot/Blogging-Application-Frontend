@@ -1,0 +1,134 @@
+.login-page {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-card {
+  width: 400px;
+  height: auto;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* subtle shadow */
+  display: flex;
+  flex-direction: column;
+  padding: 30px 40px;
+  row-gap: 40px;
+}
+
+.login-header {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  text-align: center;
+}
+
+.login-header h3 {
+  font-size: 32px;
+  font-weight: 800;
+  color: #5044e6;
+}
+
+.login-header p {
+  font-size: 18px;
+  color: gray;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.profile-upload {
+  text-align: center;
+}
+
+.profile-upload img {
+  width: 120px;
+  cursor: pointer;
+}
+
+.input-div {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+}
+
+.input-div label {
+  font-size: 18px;
+  font-weight: 600;
+  color: #364153;
+}
+
+.input-div input {
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  outline: none;
+}
+
+.login-button {
+  width: 100%;
+  padding: 10px 15px;
+  background-color: #5044e6;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.login-button:hover {
+  background-color: #3b32b1;
+  transition: all 0.3s ease;
+}
+
+.register-text {
+  text-align: center;
+  font-size: 16px;
+  color: gray;
+}
+
+.register-link {
+  color: #5044e6;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+.spinner {
+  border: 6px solid #eee;
+  border-top: 6px solid #5044e5;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 12px;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
